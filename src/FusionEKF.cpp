@@ -24,12 +24,13 @@ FusionEKF::FusionEKF()
     Hj_ = MatrixXd(3, 4);
 
     //measurement covariance matrix - laser
-    R_laser_ << 0.0225, 0, 0, 0.0225;
+    R_laser_ << 0.0225, 0,
+                0, 0.0225;
 
     //measurement covariance matrix - radar
     R_radar_ << 0.09, 0, 0,
-        0, 0.0009, 0,
-        0, 0, 0.09;
+                0, 0.0009, 0,
+                0, 0, 0.09;
 
     /**
      * TODO:
@@ -41,23 +42,23 @@ FusionEKF::FusionEKF()
     //the initial transition matrix F_
     ekf_.F_ = MatrixXd(4, 4);
     ekf_.F_ << 1, 0, 1, 0,
-        0, 1, 0, 1,
-        0, 0, 1, 0,
-        0, 0, 0, 1;
+               0, 1, 0, 1,
+               0, 0, 1, 0,
+               0, 0, 0, 1;
 
     //state covariance matrix P
     ekf_.P_ = MatrixXd(4, 4);
     ekf_.P_ << 1, 0, 0, 0,
-        0, 1, 0, 0,
-        0, 0, 1000, 0,
-        0, 0, 0, 1000;
+               0, 1, 0, 0,
+               0, 0, 1000, 0,
+               0, 0, 0, 1000;
 
     H_laser_ << 1, 0, 0, 0,
-        0, 1, 0, 0;
+                0, 1, 0, 0;
 
     Hj_ << 1, 1, 0, 0,
-         1, 1, 0, 0,
-         1, 1, 1, 1;
+           1, 1, 0, 0,
+           1, 1, 1, 1;
 }
 
 /**
@@ -135,9 +136,9 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack)
     previous_timestamp_ = measurement_pack.timestamp_;
     cout << "Calculating state transition matrix F" << endl;
     ekf_.F_ << 1, 0, dt, 0,
-        0, 1, 0, dt,
-        0, 0, 1, 0,
-        0, 0, 0, 1;
+               0, 1, 0, dt,
+               0, 0, 1, 0,
+               0, 0, 0, 1;
 
     float dt_4 = pow(dt, 4) / 4;
     float dt_3 = pow(dt, 3) / 2;
@@ -147,9 +148,9 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack)
     cout << "Calculating process noise covariance matrix Q" << endl;
     ekf_.Q_ = MatrixXd(4, 4);
     ekf_.Q_ << dt_4 * noise_ax, 0, dt_3 * noise_ax, 0,
-        0, dt_4 * noise_ay, 0, dt_3 * noise_ay,
-        dt_3 * noise_ax, 0, dt_2 * noise_ax, 0,
-        0, dt_3 * noise_ay, 0, dt_2 * noise_ay;
+               0, dt_4 * noise_ay, 0, dt_3 * noise_ay,
+               dt_3 * noise_ax, 0, dt_2 * noise_ax, 0,
+               0, dt_3 * noise_ay, 0, dt_2 * noise_ay;
 
     cout << "Predict EKF" << endl;
     ekf_.Predict();
