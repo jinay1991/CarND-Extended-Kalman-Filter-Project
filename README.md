@@ -92,11 +92,11 @@ Extended Kalman Filter accuracy at end of path for given two datasets are as giv
 
 *Result from Dataset 1*
 
-![image1](examples/ds1.jpg)
+![image1](examples/ds1.png)
 
 *Result from Dataset 2*
 
-![image2](examples/ds2.jpg)
+![image2](examples/ds2.png)
 
 ### Follows the Correct Algorithm
 
