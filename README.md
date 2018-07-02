@@ -3,14 +3,12 @@
 Udacity Self Driving Car Nanodegree Term#2 Project#1
 
 ## Overview
----
 
 This project consist of implementing [Extended Kalman Filter](https://en.wikipedia.org/wiki/Extended_Kalman_filter) with `C++`. A simulator was provided by Udacity which can be downloadable from [here](https://github.com/udacity/self-driving-car-sim/releases), which generates `RADAR` and `LIDAR` data for populating Object position and velocity. Later Extended Kalman Filter will fuse them together to predict their future positions and velocity.
 
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. Please see [this concept in the classroom](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/16cf4a78-4fc7-49e1-8621-3450ca938b77) for the required version and installation scripts.
 
 ## Prerequisites
----
 
 The project requires following packages/dependencies to be installed on system
 
@@ -40,7 +38,6 @@ Tips for setting up your environment can be found [here](https://classroom.udaci
 
 
 ## Communicating with Simulator
----
 
 The main protcol that main.cpp uses for `uWebSocketIO` in communicating with the simulator.
 
