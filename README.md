@@ -85,18 +85,18 @@ More information is only accessible by people who are already enrolled in Term 2
 
 * px, py, vx, vy output coordinates must have an RMSE <= [.11, .11, 0.52, 0.52] when using the file: "obj_pose-laser-radar-synthetic-input.txt" which is the same data file the simulator uses for Dataset 1.
 
-Extended Kalman Filter accuracy at end of path for given two datasets are as given below which meets the requirement of `RMSE <= [.11 .11 .52 .52]` when using file `obj_pose-laser-radar-synthetic-input.txt` which is same data file as `Dataset 1`. Although I have tested with `Dataset 2` and that meets requirement too:
+  Extended Kalman Filter accuracy at end of path for given two datasets are as given below which meets the requirement of `RMSE <= [.11 .11 .52 .52]` when using file `obj_pose-laser-radar-synthetic-input.txt` which is same data file as `Dataset 1`. Although I have tested with `Dataset 2` and that meets requirement too:
 
-  * **Dataset 1**: `RMSE = [0.0964 0.0854 0.4154 0.4316]`
-  * **Dataset 2**: `RMSE = [0.0726 0.0965 0.4219 0.4937]`
+    * **Dataset 1**: `RMSE = [0.0964 0.0854 0.4154 0.4316]`
+    * **Dataset 2**: `RMSE = [0.0726 0.0965 0.4219 0.4937]`
 
-*Result from Dataset 1*
+  *Result from Dataset 1*
 
-![image1](examples/ds1.png)
+  ![image1](examples/ds1.png)
 
-*Result from Dataset 2*
+  *Result from Dataset 2*
 
-![image2](examples/ds2.png)
+  ![image2](examples/ds2.png)
 
 ### Follows the Correct Algorithm
 
