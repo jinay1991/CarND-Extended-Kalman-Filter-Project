@@ -63,6 +63,12 @@ class KalmanFilter
      * @param z The measurement at k+1
      */
     void UpdateEKF(const Eigen::VectorXd &z);
+  private:
+    /**
+     * Estimates new position
+     * @param y The measurements at k+1
+     */
+    void Estimate(Eigen::VectorXd &y);
 };
 
 #endif /* KALMAN_FILTER_H_ */
